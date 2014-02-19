@@ -1,0 +1,330 @@
+﻿namespace Titlalica_3
+{
+    partial class MainForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.layotPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tabPanel = new System.Windows.Forms.TabControl();
+            this.defaultPage = new System.Windows.Forms.TabPage();
+            this.searchTF = new System.Windows.Forms.TextBox();
+            this.languageCB = new System.Windows.Forms.ComboBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.downloadButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.defaultTable = new System.Windows.Forms.DataGridView();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.version = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.layotPanel.SuspendLayout();
+            this.tabPanel.SuspendLayout();
+            this.defaultPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultTable)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // layotPanel
+            // 
+            this.layotPanel.BackgroundImage = global::Titlalica_3.Properties.Resources.background;
+            this.layotPanel.ColumnCount = 3;
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.10204F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.89796F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.layotPanel.Controls.Add(this.tabPanel, 0, 3);
+            this.layotPanel.Controls.Add(this.searchTF, 1, 1);
+            this.layotPanel.Controls.Add(this.languageCB, 2, 1);
+            this.layotPanel.Controls.Add(this.searchButton, 2, 2);
+            this.layotPanel.Controls.Add(this.downloadButton, 2, 4);
+            this.layotPanel.Controls.Add(this.label1, 0, 4);
+            this.layotPanel.Controls.Add(this.progressBar, 1, 4);
+            this.layotPanel.Location = new System.Drawing.Point(0, -1);
+            this.layotPanel.Name = "layotPanel";
+            this.layotPanel.Padding = new System.Windows.Forms.Padding(20);
+            this.layotPanel.RowCount = 5;
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.84615F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.15385F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 307F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.layotPanel.Size = new System.Drawing.Size(787, 465);
+            this.layotPanel.TabIndex = 0;
+            searchTF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTF_KeyDown);
+            // 
+            // tabPanel
+            // 
+            this.layotPanel.SetColumnSpan(this.tabPanel, 3);
+            this.tabPanel.Controls.Add(this.defaultPage);
+            this.tabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPanel.Location = new System.Drawing.Point(23, 113);
+            this.tabPanel.Name = "tabPanel";
+            this.tabPanel.SelectedIndex = 0;
+            this.tabPanel.Size = new System.Drawing.Size(741, 301);
+            this.tabPanel.TabIndex = 0;
+            // 
+            // defaultPage
+            // 
+            this.defaultPage.AutoScroll = true;
+            this.defaultPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.defaultPage.Controls.Add(this.defaultTable);
+            this.defaultPage.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.defaultPage.Location = new System.Drawing.Point(4, 22);
+            this.defaultPage.Name = "defaultPage";
+            this.defaultPage.Padding = new System.Windows.Forms.Padding(3);
+            this.defaultPage.Size = new System.Drawing.Size(733, 275);
+            this.defaultPage.TabIndex = 1;
+            this.defaultPage.Text = "Search 1";
+            // 
+            // searchTF
+            // 
+            this.searchTF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.searchTF.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.searchTF.Location = new System.Drawing.Point(347, 30);
+            this.searchTF.Name = "searchTF";
+            this.searchTF.Size = new System.Drawing.Size(258, 32);
+            this.searchTF.TabIndex = 1;
+            // 
+            // languageCB
+            // 
+            this.languageCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.languageCB.Font = new System.Drawing.Font("Agency FB", 15F);
+            this.languageCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.languageCB.FormattingEnabled = true;
+            this.languageCB.Items.AddRange(new object[] {
+            "English",
+            "Serbian",
+            "Croatian"});
+            this.languageCB.Location = new System.Drawing.Point(611, 30);
+            this.languageCB.MaxDropDownItems = 3;
+            this.languageCB.Name = "languageCB";
+            this.languageCB.Size = new System.Drawing.Size(149, 32);
+            this.languageCB.TabIndex = 2;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.searchButton.BackgroundImage = global::Titlalica_3.Properties.Resources.search;
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.searchButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchButton.Location = new System.Drawing.Point(699, 73);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(65, 34);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // downloadButton
+            // 
+            this.downloadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.downloadButton.BackgroundImage = global::Titlalica_3.Properties.Resources.download;
+            this.downloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.downloadButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.downloadButton.Location = new System.Drawing.Point(689, 420);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.Size = new System.Drawing.Size(75, 22);
+            this.downloadButton.TabIndex = 4;
+            this.downloadButton.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.label1.Location = new System.Drawing.Point(23, 422);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Subtitle downloaded to C:\\\\Users\\mrd\\Desktop";
+            // 
+            // progressBar
+            // 
+            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.progressBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.progressBar.Location = new System.Drawing.Point(431, 420);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(174, 22);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.TabIndex = 6;
+            // 
+            // defaultTable
+            // 
+            this.defaultTable.AllowUserToAddRows = false;
+            this.defaultTable.AllowUserToDeleteRows = false;
+            this.defaultTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.defaultTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.defaultTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.defaultTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.number,
+            this.title,
+            this.version,
+            this.CDs,
+            this.fps});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.defaultTable.DefaultCellStyle = dataGridViewCellStyle6;
+            this.defaultTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.defaultTable.Location = new System.Drawing.Point(3, 3);
+            this.defaultTable.Name = "defaultTable";
+            this.defaultTable.ReadOnly = true;
+            this.defaultTable.RowHeadersVisible = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defaultTable.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.defaultTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.defaultTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.defaultTable.Size = new System.Drawing.Size(727, 269);
+            this.defaultTable.TabIndex = 0;
+            this.defaultTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.defaultTable_CellContentClick);
+            // 
+            // number
+            // 
+            this.number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.number.DefaultCellStyle = dataGridViewCellStyle3;
+            this.number.Frozen = true;
+            this.number.HeaderText = "#";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.number.Width = 39;
+            // 
+            // title
+            // 
+            this.title.Frozen = true;
+            this.title.HeaderText = "Title";
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            this.title.Width = 250;
+            // 
+            // version
+            // 
+            this.version.Frozen = true;
+            this.version.HeaderText = "Version";
+            this.version.Name = "version";
+            this.version.ReadOnly = true;
+            this.version.Width = 350;
+            // 
+            // CDs
+            // 
+            this.CDs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CDs.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CDs.Frozen = true;
+            this.CDs.HeaderText = "CD#";
+            this.CDs.Name = "CDs";
+            this.CDs.ReadOnly = true;
+            this.CDs.Width = 40;
+            // 
+            // fps
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fps.DefaultCellStyle = dataGridViewCellStyle5;
+            this.fps.Frozen = true;
+            this.fps.HeaderText = "FPS";
+            this.fps.Name = "fps";
+            this.fps.ReadOnly = true;
+            this.fps.Width = 50;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackgroundImage = global::Titlalica_3.Properties.Resources.background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(784, 462);
+            this.Controls.Add(this.layotPanel);
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Titlalica 3";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.layotPanel.ResumeLayout(false);
+            this.layotPanel.PerformLayout();
+            this.tabPanel.ResumeLayout(false);
+            this.defaultPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.defaultTable)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        private void searchTF_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TableLayoutPanel layotPanel;
+        private System.Windows.Forms.TabControl tabPanel;
+        private System.Windows.Forms.TabPage defaultPage;
+        private System.Windows.Forms.TextBox searchTF;
+        private System.Windows.Forms.ComboBox languageCB;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button downloadButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.DataGridView defaultTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn version;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fps;
+    }
+}
+
