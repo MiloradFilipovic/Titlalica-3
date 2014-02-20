@@ -7,3 +7,4 @@ F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlali
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.exe
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.pdb
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.MainForm.resources
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.SettingsForm.resources

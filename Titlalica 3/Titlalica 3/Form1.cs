@@ -13,7 +13,7 @@ namespace Titlalica_3 {
         
         //SETTINGS:
         //SEARCH IN NEW TAB - if true every serarched title is shown in its own tab page
-        bool searchInNewTab = true;
+        public bool searchInNewTab = true;
 
         public MainForm() {
             InitializeComponent();
@@ -67,6 +67,11 @@ namespace Titlalica_3 {
             tabPanel.TabPages.Add(defaultPage);
             searchTF.Text = "";
             this.ActiveControl = searchTF;
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e) {
+            SettingsForm settings = new SettingsForm(this);
+            settings.Visible = true;
         }
 
     }
