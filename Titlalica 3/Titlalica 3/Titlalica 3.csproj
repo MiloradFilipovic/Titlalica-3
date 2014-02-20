@@ -84,6 +84,18 @@
   <ItemGroup>
     <None Include="images\download.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\clear.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
