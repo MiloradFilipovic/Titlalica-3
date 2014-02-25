@@ -9,3 +9,4 @@ F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlali
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.MainForm.resources
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.SettingsForm.resources
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\App.config
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.TitlalicaTabPage.resources

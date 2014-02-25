@@ -23,9 +23,10 @@ namespace Titlalica_3 {
             progressBar.Visible = false;
             this.ActiveControl = searchTF;
             mainMenu.ForeColor = Color.White;
+            DataGridView table = (DataGridView)titlalicaTabPage1.Controls[0];
             for (int i = 0; i < 50; i++) {
-                defaultTable.Rows.Add(i+1, "Batman The Dark Knight", "Batman.The.Dark.Knight.PROPPER.aXXo.740p", "1", "24");
-                defaultTable.Rows.Add(i+2, "Batman The Dark Knight", "Batman.The.Dark.Knight.BRRip.Division.MultiSubs.14520p", "1", "N/A");
+                table.Rows.Add(i+1, "Batman The Dark Knight", "Batman.The.Dark.Knight.PROPPER.aXXo.740p", "1", "24");
+                table.Rows.Add(i+2, "Batman The Dark Knight", "Batman.The.Dark.Knight.BRRip.Division.MultiSubs.14520p", "1", "N/A");
             }
         }
 
@@ -55,6 +56,8 @@ namespace Titlalica_3 {
                     }
                     else {
                         TabPage newTab = new TabPage();
+                        TitlalicaTabPage tit = new TitlalicaTabPage();
+                        newTab.Controls.Add(tit);
                         newTab.Text = title;
                         tabPanel.TabPages.Add(newTab);
                         tabPanel.SelectedTab = newTab;
