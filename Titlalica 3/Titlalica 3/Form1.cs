@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace Titlalica_3 {
         
         //SETTINGS:
         //SEARCH IN NEW TAB - if true every serarched title is shown in its own tab page
-        public bool searchInNewTab = true;
+        private bool searchInNewTab;
 
         public MainForm() {
             InitializeComponent();
+            setUp();
             languageCB.SelectedIndex = 0;
             progressBar.Visible = false;
             this.ActiveControl = searchTF;
@@ -25,6 +27,11 @@ namespace Titlalica_3 {
                 defaultTable.Rows.Add(i+1, "Batman The Dark Knight", "Batman.The.Dark.Knight.PROPPER.aXXo.740p", "1", "24");
                 defaultTable.Rows.Add(i+2, "Batman The Dark Knight", "Batman.The.Dark.Knight.BRRip.Division.MultiSubs.14520p", "1", "N/A");
             }
+        }
+
+        private void setUp() {
+            String searchInNewTabSetting = System.Configuration.ConfigurationManager.AppSettings["searchInNewTab"].ToString();
+            this.searchInNewTab = Convert.ToBoolean(searchInNewTabSetting);
         }
 
         //CLICK ON SEARCH BUTTON
@@ -60,19 +67,53 @@ namespace Titlalica_3 {
             }
         }
 
-        private void clearSearchBtn_Click(object sender, EventArgs e) {
+        public void setSearchInNewTab(Boolean value) {
+            this.searchInNewTab = value;
+            if (!value) {
+                clearTabs();
+            }
+            updateSettings();
+        }
+
+        //saves application settings to config file
+        private void updateSettings() {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            config.AppSettings.Settings["searchInNewTab"].Value = this.searchInNewTab.ToString();
+
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+
+        //clears tabs, leaves only one tab page
+        public void clearTabs() {
             TabPage defaultPage = tabPanel.TabPages[0];
             defaultPage.Text = "Search 1";
             tabPanel.TabPages.Clear();
             tabPanel.TabPages.Add(defaultPage);
+        }
+
+        //----------------------------------------------------------------LISTENER METHODS
+
+        private void clearSearchBtn_Click(object sender, EventArgs e) {
+            clearTabs();
             searchTF.Text = "";
             this.ActiveControl = searchTF;
         }
 
         private void settingsBtn_Click(object sender, EventArgs e) {
             SettingsForm settings = new SettingsForm(this);
-            settings.Visible = true;
+            settings.ShowDialog(this);
         }
 
-    }
-}
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e) {
+            SettingsForm settings = new SettingsForm(this);
+            settings.ShowDialog(this);
+        }
+
+        public Boolean getSearchInNewTab() {
+            return this.searchInNewTab;
+        }
+
+    }//CLASS END
+}//NAMESPACE END

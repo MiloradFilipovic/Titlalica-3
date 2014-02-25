@@ -25,11 +25,11 @@ namespace Titlalica_3 {
         }
 
         private void init() {
-            searchInNewTabCB.Checked = mainForm.searchInNewTab;
+            searchInNewTabCB.Checked = mainForm.getSearchInNewTab();
         }
 
         private void okBtn_Click(object sender, EventArgs e) {
-            this.mainForm.searchInNewTab = searchInNewTabCB.Checked;
+            this.mainForm.setSearchInNewTab(searchInNewTabCB.Checked);
             this.Dispose();
             this.Visible = false;
         }
