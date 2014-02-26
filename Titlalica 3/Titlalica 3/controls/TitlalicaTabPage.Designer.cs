@@ -23,8 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.subtitlesTable = new System.Windows.Forms.DataGridView();
             this.Nr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +42,14 @@
             this.subtitlesTable.AllowUserToAddRows = false;
             this.subtitlesTable.AllowUserToDeleteRows = false;
             this.subtitlesTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.subtitlesTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.subtitlesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subtitlesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nr,
@@ -46,19 +57,20 @@
             this.Version,
             this.CDs,
             this.FPS});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.subtitlesTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.subtitlesTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.subtitlesTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subtitlesTable.Location = new System.Drawing.Point(0, 0);
             this.subtitlesTable.Name = "subtitlesTable";
             this.subtitlesTable.ReadOnly = true;
             this.subtitlesTable.RowHeadersVisible = false;
+            this.subtitlesTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.subtitlesTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.subtitlesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.subtitlesTable.Size = new System.Drawing.Size(733, 292);
@@ -66,46 +78,57 @@
             // 
             // Nr
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
-            this.Nr.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Nr.Frozen = true;
+            this.Nr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            this.Nr.DefaultCellStyle = dataGridViewCellStyle2;
             this.Nr.HeaderText = "#";
             this.Nr.Name = "Nr";
             this.Nr.ReadOnly = true;
-            this.Nr.Width = 50;
+            this.Nr.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nr.Width = 40;
             // 
             // Title
             // 
-            this.Title.Frozen = true;
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Title.HeaderText = "Title";
             this.Title.Name = "Title";
             this.Title.ReadOnly = true;
-            this.Title.Width = 250;
+            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Title.ToolTipText = "Movie title";
+            this.Title.Width = 280;
             // 
             // Version
             // 
-            this.Version.Frozen = true;
+            this.Version.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Version.HeaderText = "Version";
             this.Version.Name = "Version";
             this.Version.ReadOnly = true;
+            this.Version.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Version.Width = 300;
             // 
             // CDs
             // 
-            this.CDs.Frozen = true;
+            this.CDs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CDs.DefaultCellStyle = dataGridViewCellStyle3;
             this.CDs.HeaderText = "#CD";
             this.CDs.Name = "CDs";
             this.CDs.ReadOnly = true;
+            this.CDs.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.CDs.Width = 50;
             // 
             // FPS
             // 
-            this.FPS.Frozen = true;
+            this.FPS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FPS.DefaultCellStyle = dataGridViewCellStyle4;
             this.FPS.HeaderText = "FPS";
             this.FPS.Name = "FPS";
             this.FPS.ReadOnly = true;
-            this.FPS.Width = 50;
+            this.FPS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FPS.Width = 52;
             // 
             // TitlalicaTabPage
             // 

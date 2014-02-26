@@ -37,7 +37,7 @@
             this.languageCB = new System.Windows.Forms.ComboBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.downloadButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.clearSearchBtn = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.newSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadSelectedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,14 +70,14 @@
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.03856F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.77024F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.19121F));
-            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.layotPanel.Controls.Add(this.tabPanel, 0, 4);
             this.layotPanel.Controls.Add(this.searchTF, 0, 2);
             this.layotPanel.Controls.Add(this.languageCB, 2, 2);
             this.layotPanel.Controls.Add(this.searchButton, 3, 2);
             this.layotPanel.Controls.Add(this.downloadButton, 3, 5);
-            this.layotPanel.Controls.Add(this.label1, 0, 5);
+            this.layotPanel.Controls.Add(this.statusLabel, 0, 5);
             this.layotPanel.Controls.Add(this.progressBar, 1, 5);
             this.layotPanel.Controls.Add(this.clearSearchBtn, 4, 2);
             this.layotPanel.Controls.Add(this.settingsBtn, 4, 3);
@@ -89,8 +91,8 @@
             this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.84615F));
             this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.15385F));
             this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 327F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 328F));
             this.layotPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.layotPanel.Size = new System.Drawing.Size(787, 465);
             this.layotPanel.TabIndex = 0;
@@ -100,10 +102,10 @@
             this.layotPanel.SetColumnSpan(this.tabPanel, 5);
             this.tabPanel.Controls.Add(this.defaultPage);
             this.tabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPanel.Location = new System.Drawing.Point(23, 110);
+            this.tabPanel.Location = new System.Drawing.Point(23, 109);
             this.tabPanel.Name = "tabPanel";
             this.tabPanel.SelectedIndex = 0;
-            this.tabPanel.Size = new System.Drawing.Size(741, 321);
+            this.tabPanel.Size = new System.Drawing.Size(741, 322);
             this.tabPanel.TabIndex = 0;
             // 
             // defaultPage
@@ -116,7 +118,7 @@
             this.defaultPage.Location = new System.Drawing.Point(4, 25);
             this.defaultPage.Name = "defaultPage";
             this.defaultPage.Padding = new System.Windows.Forms.Padding(3);
-            this.defaultPage.Size = new System.Drawing.Size(733, 292);
+            this.defaultPage.Size = new System.Drawing.Size(733, 293);
             this.defaultPage.TabIndex = 1;
             this.defaultPage.Text = "Search 1";
             // 
@@ -126,8 +128,8 @@
             this.layotPanel.SetColumnSpan(this.searchTF, 2);
             this.searchTF.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchTF.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
-            this.searchTF.Location = new System.Drawing.Point(307, 29);
+            this.searchTF.ForeColor = System.Drawing.SystemColors.Control;
+            this.searchTF.Location = new System.Drawing.Point(325, 29);
             this.searchTF.Name = "searchTF";
             this.searchTF.Size = new System.Drawing.Size(236, 32);
             this.searchTF.TabIndex = 1;
@@ -138,13 +140,13 @@
             this.languageCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.languageCB.Dock = System.Windows.Forms.DockStyle.Left;
             this.languageCB.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.languageCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
+            this.languageCB.ForeColor = System.Drawing.SystemColors.Control;
             this.languageCB.FormattingEnabled = true;
             this.languageCB.Items.AddRange(new object[] {
             "English",
             "Serbian",
             "Croatian"});
-            this.languageCB.Location = new System.Drawing.Point(549, 29);
+            this.languageCB.Location = new System.Drawing.Point(567, 29);
             this.languageCB.MaxDropDownItems = 3;
             this.languageCB.Name = "languageCB";
             this.languageCB.Size = new System.Drawing.Size(95, 32);
@@ -156,9 +158,9 @@
             this.searchButton.BackgroundImage = global::Titlalica_3.Properties.Resources.search;
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchButton.Location = new System.Drawing.Point(650, 29);
+            this.searchButton.Location = new System.Drawing.Point(672, 29);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(44, 35);
+            this.searchButton.Size = new System.Drawing.Size(41, 35);
             this.searchButton.TabIndex = 3;
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -176,25 +178,25 @@
             this.downloadButton.TabIndex = 4;
             this.downloadButton.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // statusLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
-            this.label1.Location = new System.Drawing.Point(23, 439);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Subtitle downloaded to C:\\\\Users\\mrd\\Desktop";
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.statusLabel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.statusLabel.Location = new System.Drawing.Point(23, 439);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(223, 16);
+            this.statusLabel.TabIndex = 5;
+            this.statusLabel.Text = "Subtitle downloaded to C:\\\\Users\\mrd\\Desktop";
             // 
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
-            this.progressBar.Location = new System.Drawing.Point(369, 437);
+            this.progressBar.Location = new System.Drawing.Point(387, 437);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(174, 20);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -207,9 +209,9 @@
             this.clearSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.clearSearchBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.clearSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.clearSearchBtn.Location = new System.Drawing.Point(700, 29);
+            this.clearSearchBtn.Location = new System.Drawing.Point(719, 29);
             this.clearSearchBtn.Name = "clearSearchBtn";
-            this.clearSearchBtn.Size = new System.Drawing.Size(46, 35);
+            this.clearSearchBtn.Size = new System.Drawing.Size(41, 35);
             this.clearSearchBtn.TabIndex = 7;
             this.clearSearchBtn.UseVisualStyleBackColor = false;
             this.clearSearchBtn.Click += new System.EventHandler(this.clearSearchBtn_Click);
@@ -219,11 +221,12 @@
             this.settingsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.settingsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("settingsBtn.BackgroundImage")));
             this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.settingsBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.settingsBtn.FlatAppearance.BorderSize = 0;
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.Location = new System.Drawing.Point(700, 70);
+            this.settingsBtn.Location = new System.Drawing.Point(722, 70);
             this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(42, 34);
+            this.settingsBtn.Size = new System.Drawing.Size(42, 33);
             this.settingsBtn.TabIndex = 8;
             this.settingsBtn.UseVisualStyleBackColor = false;
             this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
@@ -238,11 +241,11 @@
             this.fileToolStripMenuItem1,
             this.searchToolStripMenuItem1,
             this.helpToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(546, 3);
+            this.mainMenu.Location = new System.Drawing.Point(564, 3);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mainMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mainMenu.Size = new System.Drawing.Size(221, 23);
+            this.mainMenu.Size = new System.Drawing.Size(203, 23);
             this.mainMenu.TabIndex = 9;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -257,12 +260,16 @@
             // 
             // downloadSelectedToolStripMenuItem
             // 
+            this.downloadSelectedToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.downloadSelectedToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.downloadSelectedToolStripMenuItem.Name = "downloadSelectedToolStripMenuItem";
             this.downloadSelectedToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.downloadSelectedToolStripMenuItem.Text = "Help";
             // 
             // settingToolStripMenuItem
             // 
+            this.settingToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.settingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.settingToolStripMenuItem.Text = "About";
@@ -277,14 +284,21 @@
             // 
             // newSearchToolStripMenuItem
             // 
+            this.newSearchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.newSearchToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.newSearchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.newSearchToolStripMenuItem.Name = "newSearchToolStripMenuItem";
             this.newSearchToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.newSearchToolStripMenuItem.Text = "New search";
+            this.newSearchToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.downloadSelectedToolStripMenuItem1,
+            this.openFilesToolStripMenuItem,
+            this.toolStripSeparator1,
             this.settingsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(39, 19);
@@ -293,14 +307,29 @@
             // downloadSelectedToolStripMenuItem1
             // 
             this.downloadSelectedToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.downloadSelectedToolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.downloadSelectedToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Menu;
             this.downloadSelectedToolStripMenuItem1.Name = "downloadSelectedToolStripMenuItem1";
             this.downloadSelectedToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.downloadSelectedToolStripMenuItem1.Text = "Download selected";
             // 
+            // openFilesToolStripMenuItem
+            // 
+            this.openFilesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.openFilesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.openFilesToolStripMenuItem.Name = "openFilesToolStripMenuItem";
+            this.openFilesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openFilesToolStripMenuItem.Text = "...Open files";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.settingsToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
@@ -373,7 +402,7 @@
         private System.Windows.Forms.TextBox searchTF;
         private System.Windows.Forms.ComboBox languageCB;
         private System.Windows.Forms.Button downloadButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button clearSearchBtn;
@@ -391,6 +420,8 @@
         private System.Windows.Forms.ToolStripMenuItem downloadSelectedToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private TitlalicaTabPage titlalicaTabPage1;
+        private System.Windows.Forms.ToolStripMenuItem openFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

@@ -1,12 +1,15 @@
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\App.config
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.exe.config
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.exe
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.pdb
-F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.csprojResolveAssemblyReference.cache
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.MainForm.resources
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.SettingsForm.resources
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.Properties.Resources.resources
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.TitlalicaTabPage.resources
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.csproj.GenerateResource.Cache
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.exe
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.pdb
-F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.MainForm.resources
-F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.SettingsForm.resources
-F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\App.config
-F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.TitlalicaTabPage.resources
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.csprojResolveAssemblyReference.cache
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.dll
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.pdb
+F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.xml
