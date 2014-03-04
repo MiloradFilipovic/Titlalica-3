@@ -37,8 +37,9 @@
             this.proxyTF = new System.Windows.Forms.TextBox();
             this.proxyCB = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.opacitySlider = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
+            this.opacitySlider = new System.Windows.Forms.TrackBar();
+            this.systemSettingsCB = new System.Windows.Forms.CheckBox();
             this.SearchGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -112,15 +113,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.systemSettingsCB);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.portTF);
             this.groupBox1.Controls.Add(this.proxyTF);
             this.groupBox1.Controls.Add(this.proxyCB);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(10, 137);
+            this.groupBox1.Location = new System.Drawing.Point(10, 135);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 101);
+            this.groupBox1.Size = new System.Drawing.Size(264, 110);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection settings";
@@ -129,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(202, 64);
+            this.label3.Location = new System.Drawing.Point(202, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 4;
@@ -138,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 64);
+            this.label2.Location = new System.Drawing.Point(12, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
@@ -146,14 +148,14 @@
             // 
             // portTF
             // 
-            this.portTF.Location = new System.Drawing.Point(216, 61);
+            this.portTF.Location = new System.Drawing.Point(216, 74);
             this.portTF.Name = "portTF";
             this.portTF.Size = new System.Drawing.Size(36, 20);
             this.portTF.TabIndex = 2;
             // 
             // proxyTF
             // 
-            this.proxyTF.Location = new System.Drawing.Point(58, 61);
+            this.proxyTF.Location = new System.Drawing.Point(58, 74);
             this.proxyTF.Name = "proxyTF";
             this.proxyTF.Size = new System.Drawing.Size(141, 20);
             this.proxyTF.TabIndex = 1;
@@ -161,7 +163,7 @@
             // proxyCB
             // 
             this.proxyCB.AutoSize = true;
-            this.proxyCB.Location = new System.Drawing.Point(18, 26);
+            this.proxyCB.Location = new System.Drawing.Point(18, 46);
             this.proxyCB.Name = "proxyCB";
             this.proxyCB.Size = new System.Drawing.Size(105, 17);
             this.proxyCB.TabIndex = 0;
@@ -182,6 +184,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Appereance";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Transparency";
+            // 
             // opacitySlider
             // 
             this.opacitySlider.Location = new System.Drawing.Point(104, 34);
@@ -194,14 +205,16 @@
             this.opacitySlider.Value = 20;
             this.opacitySlider.Scroll += new System.EventHandler(this.opacitySlider_Scroll);
             // 
-            // label4
+            // systemSettingsCB
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Transparency";
+            this.systemSettingsCB.AutoSize = true;
+            this.systemSettingsCB.Location = new System.Drawing.Point(18, 23);
+            this.systemSettingsCB.Name = "systemSettingsCB";
+            this.systemSettingsCB.Size = new System.Drawing.Size(119, 17);
+            this.systemSettingsCB.TabIndex = 5;
+            this.systemSettingsCB.Text = "Use system settings";
+            this.systemSettingsCB.UseVisualStyleBackColor = true;
+            this.systemSettingsCB.CheckedChanged += new System.EventHandler(this.systemSettingsCB_CheckedChanged);
             // 
             // SettingsForm
             // 
@@ -254,5 +267,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TrackBar opacitySlider;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox systemSettingsCB;
     }
 }

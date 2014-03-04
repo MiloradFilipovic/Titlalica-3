@@ -27,6 +27,7 @@ namespace Titlalica_3 {
         private void init() {
             searchInNewTabCB.Checked = mainForm.getSearchInNewTab();
             proxyCB.Checked = mainForm.getUseProxy();
+            systemSettingsCB.Checked = !mainForm.getUseProxy();
             proxyTF.Text = mainForm.getProxyAddress();
             portTF.Text = mainForm.getProxyPort();
             setTextBoxes(mainForm.getUseProxy());
@@ -49,6 +50,13 @@ namespace Titlalica_3 {
 
         private void proxyCB_CheckedChanged(object sender, EventArgs e) {
             setTextBoxes(proxyCB.Checked);
+            systemSettingsCB.Checked = !proxyCB.Checked;
+        }
+
+        private void systemSettingsCB_CheckedChanged(object sender, EventArgs e) {
+            proxyCB.Checked = !systemSettingsCB.Checked;
+            //if 'Use system settings' is checked, no proxy is used
+            mainForm.setUseProxy(!systemSettingsCB.Checked);
         }
 
         private void setTextBoxes(Boolean enabled) {

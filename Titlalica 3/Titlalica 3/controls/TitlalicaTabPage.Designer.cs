@@ -87,7 +87,7 @@
             this.Nr.Name = "Nr";
             this.Nr.ReadOnly = true;
             this.Nr.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Nr.Width = 40;
+            this.Nr.Width = 30;
             // 
             // Title
             // 
@@ -117,7 +117,7 @@
             this.CDs.Name = "CDs";
             this.CDs.ReadOnly = true;
             this.CDs.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CDs.Width = 50;
+            this.CDs.Width = 35;
             // 
             // FPS
             // 
@@ -128,7 +128,7 @@
             this.FPS.Name = "FPS";
             this.FPS.ReadOnly = true;
             this.FPS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FPS.Width = 52;
+            this.FPS.Width = 70;
             // 
             // TitlalicaTabPage
             // 

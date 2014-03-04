@@ -1,4 +1,5 @@
-﻿namespace Titlalica_3
+﻿using System.Windows.Forms;
+namespace Titlalica_3
 {
     partial class MainForm
     {
@@ -55,6 +56,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.titlalicaTabPage1 = new Titlalica_3.TitlalicaTabPage();
             this.layotPanel.SuspendLayout();
             this.tabPanel.SuspendLayout();
@@ -71,7 +73,7 @@
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.77024F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.19121F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.layotPanel.Controls.Add(this.tabPanel, 0, 4);
             this.layotPanel.Controls.Add(this.searchTF, 0, 2);
             this.layotPanel.Controls.Add(this.languageCB, 2, 2);
@@ -102,11 +104,13 @@
             this.layotPanel.SetColumnSpan(this.tabPanel, 5);
             this.tabPanel.Controls.Add(this.defaultPage);
             this.tabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPanel.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPanel.Location = new System.Drawing.Point(23, 109);
             this.tabPanel.Name = "tabPanel";
             this.tabPanel.SelectedIndex = 0;
             this.tabPanel.Size = new System.Drawing.Size(741, 322);
             this.tabPanel.TabIndex = 0;
+            this.tabPanel.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabPanel_Selected);
             // 
             // defaultPage
             // 
@@ -129,7 +133,7 @@
             this.searchTF.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchTF.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTF.ForeColor = System.Drawing.SystemColors.Control;
-            this.searchTF.Location = new System.Drawing.Point(325, 29);
+            this.searchTF.Location = new System.Drawing.Point(324, 29);
             this.searchTF.Name = "searchTF";
             this.searchTF.Size = new System.Drawing.Size(236, 32);
             this.searchTF.TabIndex = 1;
@@ -146,10 +150,10 @@
             "English",
             "Serbian",
             "Croatian"});
-            this.languageCB.Location = new System.Drawing.Point(567, 29);
+            this.languageCB.Location = new System.Drawing.Point(566, 29);
             this.languageCB.MaxDropDownItems = 3;
             this.languageCB.Name = "languageCB";
-            this.languageCB.Size = new System.Drawing.Size(95, 32);
+            this.languageCB.Size = new System.Drawing.Size(94, 32);
             this.languageCB.TabIndex = 2;
             // 
             // searchButton
@@ -158,7 +162,7 @@
             this.searchButton.BackgroundImage = global::Titlalica_3.Properties.Resources.search;
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchButton.Location = new System.Drawing.Point(672, 29);
+            this.searchButton.Location = new System.Drawing.Point(671, 29);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(41, 35);
             this.searchButton.TabIndex = 3;
@@ -177,6 +181,7 @@
             this.downloadButton.Size = new System.Drawing.Size(54, 20);
             this.downloadButton.TabIndex = 4;
             this.downloadButton.UseVisualStyleBackColor = false;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // statusLabel
             // 
@@ -196,9 +201,11 @@
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
-            this.progressBar.Location = new System.Drawing.Point(387, 437);
+            this.progressBar.Location = new System.Drawing.Point(390, 439);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.progressBar.MaximumSize = new System.Drawing.Size(170, 15);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(174, 20);
+            this.progressBar.Size = new System.Drawing.Size(170, 15);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 6;
             // 
@@ -209,7 +216,7 @@
             this.clearSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.clearSearchBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.clearSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.clearSearchBtn.Location = new System.Drawing.Point(719, 29);
+            this.clearSearchBtn.Location = new System.Drawing.Point(718, 29);
             this.clearSearchBtn.Name = "clearSearchBtn";
             this.clearSearchBtn.Size = new System.Drawing.Size(41, 35);
             this.clearSearchBtn.TabIndex = 7;
@@ -241,11 +248,11 @@
             this.fileToolStripMenuItem1,
             this.searchToolStripMenuItem1,
             this.helpToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(564, 3);
+            this.mainMenu.Location = new System.Drawing.Point(563, 3);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mainMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mainMenu.Size = new System.Drawing.Size(203, 23);
+            this.mainMenu.Size = new System.Drawing.Size(204, 23);
             this.mainMenu.TabIndex = 9;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -364,6 +371,7 @@
             this.titlalicaTabPage1.Location = new System.Drawing.Point(0, 2);
             this.titlalicaTabPage1.Name = "titlalicaTabPage1";
             this.titlalicaTabPage1.Size = new System.Drawing.Size(730, 287);
+            this.titlalicaTabPage1.Subs = null;
             this.titlalicaTabPage1.TabIndex = 0;
             // 
             // MainForm
@@ -422,6 +430,6 @@
         private TitlalicaTabPage titlalicaTabPage1;
         private System.Windows.Forms.ToolStripMenuItem openFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private FolderBrowserDialog folderBrowserDialog;
     }
 }
-
