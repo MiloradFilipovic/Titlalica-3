@@ -66,6 +66,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.subtitlesTable.DefaultCellStyle = dataGridViewCellStyle5;
             this.subtitlesTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subtitlesTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.subtitlesTable.Location = new System.Drawing.Point(0, 0);
             this.subtitlesTable.Name = "subtitlesTable";
             this.subtitlesTable.ReadOnly = true;

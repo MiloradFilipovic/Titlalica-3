@@ -38,7 +38,7 @@ namespace Titlalica_3 {
         delegate void DisenableCallBack(Boolean search);
         delegate void DownloadedCallBack(bool error);
 
-        // This fixes tab flickering 
+        // This fixes tab flickering
         protected override CreateParams CreateParams {
             get {
                 var parms = base.CreateParams;
@@ -48,6 +48,7 @@ namespace Titlalica_3 {
         }
 
         public MainForm() {
+            this.DoubleBuffered = true;
             InitializeComponent();
             init();
             setUp();
@@ -61,6 +62,8 @@ namespace Titlalica_3 {
             statusLabel.Text = "";
             this.ActiveControl = searchTF;
             mainMenu.ForeColor = Color.White;
+
+            this.SetStyle(ControlStyles.DoubleBuffer, true);
         }
 
         //READ CONFIG FILE AND SET UP UI CONTROLS
@@ -104,6 +107,18 @@ namespace Titlalica_3 {
                 if (language.Equals("English")) {
                     PodnapisiCrawler podnapisiCrawler = new PodnapisiCrawler(this, title);
                     Thread thread = new Thread(new ThreadStart(podnapisiCrawler.search));
+                    thread.IsBackground = true;
+                    thread.Start();
+                } else {
+                    String lang = "srpski";
+                    if (language.Equals("Croatian")) {
+                        lang = "hrvatski";
+                    }
+                    TitloviCrawler titloviCrawler = new TitloviCrawler(this);
+                    Thread thread = new Thread(delegate() {
+                        titloviCrawler.search(title, lang);
+                    });
+                    thread.IsBackground = true;
                     thread.Start();
                 }
             }
@@ -148,6 +163,7 @@ namespace Titlalica_3 {
                                 downloader.download(subtitle.DownloadURL, path, fileName.Replace("\n", ""));
                             }
                         });
+                        thread.IsBackground = true;
                         thread.Start();
                     }
                 }
@@ -162,16 +178,26 @@ namespace Titlalica_3 {
                 } catch {
                 }
             } else {
-                progressBar.Value = progress;
+                try {
+                    progressBar.Value = progress;
+                } catch {
+                    Console.WriteLine("[PROGRESS EXCEPTION] " + progress.ToString());
+                }
             }
         }
         public void showSubs(List<Subtitle> subs) {
+            String prefix = "[EN] ";
             disenableControls(true);
             if (subs != null) {
                 if (this.InvokeRequired) {
                     ShowSubtitlesCallBack d = new ShowSubtitlesCallBack(showSubs);
                     this.Invoke(d, new Object[] { subs });
                 } else {
+                    if (languageCB.SelectedItem.ToString().Equals("Croatian")) {
+                        prefix = "[HR] ";
+                    } else if (languageCB.SelectedItem.ToString().Equals("Serbian")) {
+                        prefix = "[SR] ";
+                    }
                     TabPage page = tabPanel.TabPages[0];
                     TitlalicaTabPage ttp = (TitlalicaTabPage)page.Controls[0];
                     DataGridView table = (DataGridView)ttp.Controls[0];
@@ -179,13 +205,13 @@ namespace Titlalica_3 {
                         //if search in new tab option is checked, each search is shown in separate tab
                         //if first tab is empty (it is named "Search 1"), change its name and populate its table
                         if (tabPanel.TabPages[0].Text.Equals("Search 1")) {
-                            tabPanel.TabPages[0].Text = movieTitle;
+                            tabPanel.TabPages[0].Text = prefix + movieTitle;
                             ttp.Subs = subs;
                         } else {
                             TabPage newTab = new TabPage();
                             TitlalicaTabPage tit = new TitlalicaTabPage();
                             newTab.Controls.Add(tit);
-                            newTab.Text = movieTitle;
+                            newTab.Text = prefix + movieTitle;
                             tabPanel.TabPages.Add(newTab);
                             tit.Subs = subs;
                             tabPanel.SelectedTab = newTab;
@@ -196,7 +222,7 @@ namespace Titlalica_3 {
                         table.Rows.Clear();
                         TabPage defaultPage = tabPanel.TabPages[0];
                         TitlalicaTabPage titPage = (TitlalicaTabPage)defaultPage.Controls[0];
-                        defaultPage.Text = movieTitle;
+                        defaultPage.Text = prefix + movieTitle;
                         titPage.Subs = subs;
                     }
                     //populate rows with subitle data
@@ -237,7 +263,7 @@ namespace Titlalica_3 {
                         this.Cursor = Cursors.Default;
                         progressBar.Visible = false;
                         disenableControls(true);
-                        setStatus(downloaded.ToString() + " successfully downloaded!", Color.White);
+                        setStatus(downloaded.ToString() + " subtitles successfully downloaded!", Color.White);
                     }
                 }
             }
@@ -317,11 +343,21 @@ namespace Titlalica_3 {
         //when changing tabs, show corresponding count in status label
         private void tabPanel_Selected(Object sender, TabControlEventArgs e) {
             TabPage selectedTab = e.TabPage;
-            TitlalicaTabPage selectedTit = (TitlalicaTabPage)selectedTab.Controls[0];
-            setStatus("TOTAL: " + selectedTit.Subs.Count + " subtitles.", Color.White);
+            try {
+                TitlalicaTabPage selectedTit = (TitlalicaTabPage)selectedTab.Controls[0];
+                setStatus("TOTAL: " + selectedTit.Subs.Count + " subtitles.", Color.White);
+            } catch {
+
+            }
         }
 
         private void clearSearchBtn_Click(object sender, EventArgs e) {
+            clearTabs();
+            searchTF.Text = "";
+            this.ActiveControl = searchTF;
+        }
+
+        private void newSearchToolStripMenuItem_Click(object sender, EventArgs e) {
             clearTabs();
             searchTF.Text = "";
             this.ActiveControl = searchTF;
@@ -335,6 +371,14 @@ namespace Titlalica_3 {
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e) {
             SettingsForm settings = new SettingsForm(this);
             settings.ShowDialog(this);
+        }
+
+        private void downloadButton_Click(object sender, EventArgs e) {
+            download();
+        }
+
+        private void downloadSelectedToolStripMenuItem1_Click(object sender, EventArgs e) {
+            download();
         }
         //--------------------------------------------------------------SET AND GET METHODS
         public Boolean getSearchInNewTab() {
@@ -367,10 +411,6 @@ namespace Titlalica_3 {
         public void setProxy(String address, String port) {
             this.proxyAddress = address;
             this.proxyPort = port;
-        }
-
-        private void downloadButton_Click(object sender, EventArgs e) {
-            download();
         }
     }//CLASS END
 }//NAMESPACE END

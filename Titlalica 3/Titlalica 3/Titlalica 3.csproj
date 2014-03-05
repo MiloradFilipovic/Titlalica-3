@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="crawlers\PodnapisiCrawler.cs" />
+    <Compile Include="crawlers\TitloviCrawler.cs" />
     <Compile Include="forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="images\background.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="libs\" />

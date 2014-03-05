@@ -21,6 +21,11 @@ namespace Titlalica_3 {
 
         public TitlalicaTabPage() {
             InitializeComponent();
+            SetStyle(ControlStyles.SupportsTransparentBackColor |
+                ControlStyles.Opaque |
+                ControlStyles.UserPaint |
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer, true);
         }
     }
 }

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.systemSettingsCB = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.portTF = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.opacitySlider = new System.Windows.Forms.TrackBar();
-            this.systemSettingsCB = new System.Windows.Forms.CheckBox();
             this.SearchGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -127,6 +127,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection settings";
             // 
+            // systemSettingsCB
+            // 
+            this.systemSettingsCB.AutoSize = true;
+            this.systemSettingsCB.Location = new System.Drawing.Point(18, 23);
+            this.systemSettingsCB.Name = "systemSettingsCB";
+            this.systemSettingsCB.Size = new System.Drawing.Size(119, 17);
+            this.systemSettingsCB.TabIndex = 5;
+            this.systemSettingsCB.Text = "Use system settings";
+            this.systemSettingsCB.UseVisualStyleBackColor = true;
+            this.systemSettingsCB.CheckedChanged += new System.EventHandler(this.systemSettingsCB_CheckedChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -204,17 +215,6 @@
             this.opacitySlider.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.opacitySlider.Value = 20;
             this.opacitySlider.Scroll += new System.EventHandler(this.opacitySlider_Scroll);
-            // 
-            // systemSettingsCB
-            // 
-            this.systemSettingsCB.AutoSize = true;
-            this.systemSettingsCB.Location = new System.Drawing.Point(18, 23);
-            this.systemSettingsCB.Name = "systemSettingsCB";
-            this.systemSettingsCB.Size = new System.Drawing.Size(119, 17);
-            this.systemSettingsCB.TabIndex = 5;
-            this.systemSettingsCB.Text = "Use system settings";
-            this.systemSettingsCB.UseVisualStyleBackColor = true;
-            this.systemSettingsCB.CheckedChanged += new System.EventHandler(this.systemSettingsCB_CheckedChanged);
             // 
             // SettingsForm
             // 
