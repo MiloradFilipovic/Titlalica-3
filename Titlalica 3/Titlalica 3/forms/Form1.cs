@@ -13,6 +13,9 @@ using Titlalica_3.util;
 using System.Threading;
 using System.IO;
 
+/**
+    TITLALICA 3 MAIN WINDOW
+**/
 namespace Titlalica_3 {
     public partial class MainForm : Form {
 

@@ -96,11 +96,11 @@ namespace Titlalica_3
             this.fileToolStripMenuItem1,
             this.searchToolStripMenuItem1,
             this.helpToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(562, 3);
+            this.mainMenu.Location = new System.Drawing.Point(561, 3);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.mainMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mainMenu.Size = new System.Drawing.Size(205, 23);
+            this.mainMenu.Size = new System.Drawing.Size(206, 23);
             this.mainMenu.TabIndex = 9;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -216,7 +216,7 @@ namespace Titlalica_3
             this.clearSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.clearSearchBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.clearSearchBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.clearSearchBtn.Location = new System.Drawing.Point(718, 29);
+            this.clearSearchBtn.Location = new System.Drawing.Point(717, 29);
             this.clearSearchBtn.Name = "clearSearchBtn";
             this.clearSearchBtn.Size = new System.Drawing.Size(41, 35);
             this.clearSearchBtn.TabIndex = 7;
@@ -228,7 +228,7 @@ namespace Titlalica_3
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Right;
             this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(234)))), ((int)(((byte)(150)))));
-            this.progressBar.Location = new System.Drawing.Point(389, 439);
+            this.progressBar.Location = new System.Drawing.Point(388, 439);
             this.progressBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.progressBar.MaximumSize = new System.Drawing.Size(170, 15);
             this.progressBar.Name = "progressBar";
@@ -269,7 +269,7 @@ namespace Titlalica_3
             this.searchButton.BackgroundImage = global::Titlalica_3.Properties.Resources.search;
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchButton.Location = new System.Drawing.Point(669, 29);
+            this.searchButton.Location = new System.Drawing.Point(668, 29);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(43, 35);
             this.searchButton.TabIndex = 3;
@@ -287,7 +287,7 @@ namespace Titlalica_3
             "English",
             "Serbian",
             "Croatian"});
-            this.languageCB.Location = new System.Drawing.Point(565, 29);
+            this.languageCB.Location = new System.Drawing.Point(564, 29);
             this.languageCB.MaxDropDownItems = 3;
             this.languageCB.Name = "languageCB";
             this.languageCB.Size = new System.Drawing.Size(94, 32);
@@ -300,7 +300,7 @@ namespace Titlalica_3
             this.searchTF.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchTF.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTF.ForeColor = System.Drawing.SystemColors.Control;
-            this.searchTF.Location = new System.Drawing.Point(323, 29);
+            this.searchTF.Location = new System.Drawing.Point(322, 29);
             this.searchTF.Name = "searchTF";
             this.searchTF.Size = new System.Drawing.Size(236, 32);
             this.searchTF.TabIndex = 1;
@@ -353,7 +353,7 @@ namespace Titlalica_3
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.77024F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.19121F));
             this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.layotPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.layotPanel.Controls.Add(this.tabPanel, 0, 4);
             this.layotPanel.Controls.Add(this.searchTF, 0, 2);
             this.layotPanel.Controls.Add(this.languageCB, 2, 2);
@@ -386,7 +386,7 @@ namespace Titlalica_3
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(784, 462);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.layotPanel);
             this.DoubleBuffered = true;
             this.HelpButton = true;

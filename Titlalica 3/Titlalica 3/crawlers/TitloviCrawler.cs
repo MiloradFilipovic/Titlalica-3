@@ -92,13 +92,20 @@ namespace Titlalica_3.crawlers {
                     HtmlNode aNode = h4Node.SelectSingleNode("a");
                     String movieTitle = aNode.InnerText;
                     String downloadPage = HTMLUtils.getAttributeValue(aNode, "href");
+                    
                     //<span class='year'> contains year
                     HtmlNode yearNode = h4Node.SelectSingleNode("span[@class='year']");
                     movieTitle += yearNode.InnerText.Trim();
-                    //<span class='cd'> contains number of discs
+                    // <span class='cd'> contains number of discs
+                    // If the element is not found, just put 1.
                     HtmlNode cdNode = h4Node.SelectSingleNode("span[@class='cd']");
-                    String cdStr = cdNode.InnerText.Trim().Split(' ')[0];
-                    int discs = Convert.ToInt32(cdStr.Trim());
+                    int discs = 1;
+                    if (cdNode != null)
+                    {
+                        String cdStr = cdNode.InnerText.Trim().Split(' ')[0];
+                        discs = Convert.ToInt32(cdStr.Trim());
+                    }
+                    
                     //versions are displayed in <span class="release">, separated by /
                     HtmlNode releaseNode = divC1.SelectSingleNode("span[@class='release']");
                     String releases = "N/A";
@@ -158,7 +165,6 @@ namespace Titlalica_3.crawlers {
                     }
                 }
             }
-
             return total;
         }
 

@@ -13,3 +13,18 @@ F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlali
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.dll
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.pdb
 F:\workspace\Visual studio\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.xml
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.exe.config
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.exe
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\App.config
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.exe
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\Titlalica 3.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.dll
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Debug\HtmlAgilityPack.xml
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.csprojResolveAssemblyReference.cache
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.MainForm.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.SettingsForm.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.Properties.Resources.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica_3.TitlalicaTabPage.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Debug\Titlalica 3.csproj.GenerateResource.Cache
