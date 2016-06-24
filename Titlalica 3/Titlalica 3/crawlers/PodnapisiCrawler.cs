@@ -24,14 +24,15 @@ namespace Titlalica_3.crawlers {
 
         int pageCount;
         int parsedSubs;
+        int subsPerPage = 50;
 
         public PodnapisiCrawler(MainForm caller, String movie) {
             HTMLUtils = new HTMLUtils(caller);
             this.mainForm = caller;
             this.title = movie;
-            this.searchURL = "http://www.podnapisi.net/en/ppodnapisi/search/sJ/2/sS//sO//sT/-1/sM/0/sA/0/sK/" + 
-                              title.Replace(" ", "+")  + 
-                              "/sOA/0/sOT/0/sOL/0/sOI/0/sOE/0/sOD/0/sOH/0/sY//sOCS/0/sFT/0/sR//sTS//sTE//sAKA/1/sH//sI//tbsl/1/asdp/0/page//page/";
+            this.searchURL = "https://www.podnapisi.net/subtitles/search/advanced?keywords=" + 
+                              title.Replace(" ", "+")  +
+                              "&year=&seasons=&episodes=&language=en&page=";
         }
 
         public void search() {
@@ -62,10 +63,10 @@ namespace Titlalica_3.crawlers {
             HtmlAgilityPack.HtmlDocument document = HTMLUtils.getDocument(searchURL + pageNumber.ToString());
 
             if (document != null) {
-                //subtitles are displayed in table with class 'list first_column_title'
+                //subtitles are displayed in table with classes 'table table-striped table-hover'
                 HtmlNode bodyNode = document.DocumentNode.SelectSingleNode("//body");
                 if (bodyNode != null) {
-                    HtmlNodeCollection rows = bodyNode.SelectNodes("//table[@class='list first_column_title']/tbody/tr");
+                    HtmlNodeCollection rows = bodyNode.SelectNodes("//table[@class='table table-striped table-hover']/tbody/tr");
                     foreach (HtmlNode row in rows) {
                         Subtitle title = parseRow(row);
                         titles.Add(title);
@@ -80,46 +81,55 @@ namespace Titlalica_3.crawlers {
 
         //extracts subtitle data from table rows
         private Subtitle parseRow(HtmlNode row) {
-            Subtitle sub = null;
-            
-            //get all row cells
+            String title = "N/A", downloadURL = "N/A", FPS = "N/A", version = "N/A";
+            int numberOfDiscs = 0;
+
+            // Get all row cells
             HtmlNodeCollection cells = row.SelectNodes("td");
-            
-            //first cell contains two <div> elemens, first is skipped
-            //second contains <div> with class 'list_div2' with usefull info
+
+            // First cell contains movie title, download link, and a release
             HtmlNode firstCell = cells.ElementAt(0);
-            HtmlNode listDiv2 = firstCell.SelectSingleNode("div[@class='list_div2']");
-            if (listDiv2 != null) {
-                //movie title is in <a> tag with its href containing download link
-                HtmlNode movieLink = listDiv2.SelectSingleNode("a[@class='subtitle_page_link']");
-                String movieTitle = movieLink.InnerText;
-                String downloadURL = HTMLUtils.getAttributeValue(movieLink, "href");
-                //span with class 'release' contains movie version
-                HtmlNode releaseSpan = listDiv2.SelectSingleNode("span[@class='release']");
-                String version = "N/A";
-                if (releaseSpan != null && !releaseSpan.InnerText.Trim().Equals("")) {
-                    version = releaseSpan.InnerText.Trim();
+            if(firstCell != null) {
+                HtmlNode downloadDiv = firstCell.SelectSingleNode("div[@class='pull-left']");
+                if(downloadDiv != null) {
+                    HtmlNode downloadLink = downloadDiv.SelectSingleNode("a[@alt='Download subtitles.']");
+                    downloadURL = HTMLUtils.getAttributeValue(downloadLink, "href");
                 }
-
-                //second cell contains FPS
-                HtmlNode secondCell = cells.ElementAt(1);
-                String fps = "N/A";
-                if (secondCell.InnerText != null) {
-                    fps = secondCell.InnerText;
+                HtmlNode titleLink = firstCell.SelectSingleNode("a");
+                if(titleLink != null) {
+                    title = titleLink.InnerText;
                 }
-                //number of discs is in fifth cell
-                HtmlNode fifthCell = cells.ElementAt(4);
-                int numberOfDiscs = Convert.ToInt32(fifthCell.InnerText);
-
-                sub = new Subtitle(movieTitle, version, downloadURL, fps, numberOfDiscs);
+                // Movie version is in a span.release element
+                // Currently, only one release is displayed, all others are lazy fetched by clicking a button on the website :(
+                HtmlNode releaseSpan = firstCell.SelectSingleNode("span[@class='release']");
+                if(releaseSpan != null) {
+                    version = releaseSpan.InnerText;
+                }
             }
+
+            // Second cell contains FPS
+            HtmlNode secondCell = cells.ElementAt(1);
+            if(secondCell != null) {
+                HtmlNode FPSLink = secondCell.SelectSingleNode("a");
+                if(FPSLink != null) {
+                    FPS = FPSLink.InnerText;
+                }
+            }
+
+            // Finally, third cell holds number of discs for the movie
+            HtmlNode thirdCell = cells.ElementAt(2);
+            if(thirdCell != null) {
+                numberOfDiscs = Convert.ToInt32(thirdCell.InnerText);
+            }
+
+            Subtitle sub = new Subtitle(title, version, downloadURL, FPS, numberOfDiscs);
             return sub;
         }
 
         //increments total paresed subtitles count and sets status bar in main form
         private void setProgress() {
             parsedSubs++;
-            int total = (pageCount) * 30;
+            int total = (pageCount) * subsPerPage;
             double progress = ((double)parsedSubs / (double)total) * 100;
             mainForm.setProgress((int)progress);
         }
@@ -131,11 +141,14 @@ namespace Titlalica_3.crawlers {
             try {
                 HtmlNode bodyNode = document.DocumentNode.SelectSingleNode("//body");
                 if (bodyNode != null) {
-                    HtmlNode button = bodyNode.SelectSingleNode("//button[@class='selector']");
-                    if (button != null) {
-                        String pagesString = button.InnerText.Split(' ')[0];
+                    HtmlNode paginationList = document.DocumentNode.SelectSingleNode("//ul[@class='pagination']");
+                    if (paginationList != null) {
+                        HtmlNode[] listItems = paginationList.SelectNodes(".//li").ToArray();
+                        HtmlNode lastPage = listItems[listItems.Length - 2];
+                        String pagesString = lastPage.InnerText;
+                        Console.Write("STRANICA: " + pagesString);
                         return Convert.ToInt32(pagesString);
-                    }
+                    }else
                     return 0;
                 } else {
                     return 0;
