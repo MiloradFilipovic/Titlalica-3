@@ -146,29 +146,37 @@ namespace Titlalica_3 {
                     progressBar.Value = 0;
                     progressBar.Visible = true;
                     disenableControls(false);
-                    if (language.Equals("English")) {
-                        PodnapisiDownloader downloader = new PodnapisiDownloader(this);
-                        String path = folderBrowserDialog.SelectedPath;
-                        downloaded = 0;
-                        downloadErrors = 0;
-                        toDownload = currentTable.SelectedRows.Count;
+                    SubtitleDownloader downloader = new SubtitleDownloader(this);
+                    string path = folderBrowserDialog.SelectedPath;
+                    downloaded = 0;
+                    downloadErrors = 0;
+                    toDownload = currentTable.SelectedRows.Count;
 
-                        Thread thread = new Thread(delegate() { 
-                            foreach (DataGridViewRow row in currentTable.SelectedRows) {
-                                //for each selected subtitle go to its download page and fetch file
-                                DataGridViewCell cell = row.Cells[0];
-                                int subtitleIndex = Convert.ToInt32(cell.Value);
-                                Subtitle subtitle = ttp.Subs[subtitleIndex - 1];
-                                String fileName = subtitle.Title.Replace(' ', '_') + "_" + subtitleIndex.ToString() + ".zip";
-                                if (!subtitle.Version.Equals("N/A")) {
-                                    fileName = subtitle.Version.Replace("...", "_")  + subtitleIndex.ToString() + ".zip";
+                    Thread thread = new Thread(delegate() { 
+                        foreach (DataGridViewRow row in currentTable.SelectedRows) {
+                            //for each selected subtitle go to its download page and fetch file
+                            DataGridViewCell cell = row.Cells[0];
+                            int subtitleIndex = Convert.ToInt32(cell.Value);
+                            Subtitle subtitle = ttp.Subs[subtitleIndex - 1];
+                            string fileVersion = subtitle.Version.Replace("...", "_").Replace(' ', '_');
+                            string fileName = subtitle.Title.Replace(' ', '_') + "_" + subtitleIndex.ToString() + ".zip";
+                            if (!subtitle.Version.Equals("N/A")) {
+                                string[] versionSplit = subtitle.Version.Split(' ');
+                                if (versionSplit.Length > 0)
+                                {
+                                    fileVersion = versionSplit[0];
                                 }
-                                downloader.download(subtitle.DownloadURL, path, fileName.Replace("\n", ""));
+                                fileName = subtitle.Title.Replace(' ', '_') + "_" + fileVersion  + subtitleIndex.ToString() + ".zip";
                             }
-                        });
-                        thread.IsBackground = true;
-                        thread.Start();
-                    }
+                            if (language.Equals("English")) {
+                                downloader.downloadPodnapisiFile(subtitle.DownloadURL, path, fileName.Replace("\n", ""));
+                            }else {
+                                downloader.downloadTitloviFile(subtitle.DownloadURL, path, fileName.Replace("\n", ""));
+                            }
+                        }
+                    });
+                    thread.IsBackground = true;
+                    thread.Start();
                 }
             }
         }
@@ -257,6 +265,9 @@ namespace Titlalica_3 {
                 if (error) {
                     toDownload--;
                     downloadErrors++;
+                    this.Cursor = Cursors.Default;
+                    progressBar.Visible = false;
+                    disenableControls(true);
                     setStatus("Error downloading " + downloadErrors.ToString() + " files.", Color.Red);
                 } else {
                     downloaded++;

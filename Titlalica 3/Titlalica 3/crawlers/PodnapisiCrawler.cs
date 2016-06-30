@@ -121,7 +121,6 @@ namespace Titlalica_3.crawlers {
             if(thirdCell != null) {
                 numberOfDiscs = Convert.ToInt32(thirdCell.InnerText);
             }
-
             Subtitle sub = new Subtitle(title, version, downloadURL, FPS, numberOfDiscs);
             return sub;
         }

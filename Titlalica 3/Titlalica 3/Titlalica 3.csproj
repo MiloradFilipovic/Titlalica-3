@@ -74,7 +74,7 @@
       <DependentUpon>TitlalicaTabPage.cs</DependentUpon>
     </Compile>
     <Compile Include="util\HTMLUtils.cs" />
-    <Compile Include="util\PodnapisiDownloader.cs" />
+    <Compile Include="util\SubtitleDownloader.cs" />
     <Compile Include="util\Subtitle.cs" />
     <EmbeddedResource Include="forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

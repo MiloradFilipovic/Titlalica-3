@@ -90,8 +90,8 @@ namespace Titlalica_3.crawlers {
                 if (h4Node != null) {
                     //<a> tag inside <h4> contains movie title, with its href points to download page
                     HtmlNode aNode = h4Node.SelectSingleNode("a");
-                    String movieTitle = aNode.InnerText;
-                    String downloadPage = HTMLUtils.getAttributeValue(aNode, "href");
+                    string movieTitle = aNode.InnerText;
+                    string downloadPage = HTMLUtils.getAttributeValue(aNode, "href");
                     
                     //<span class='year'> contains year
                     HtmlNode yearNode = h4Node.SelectSingleNode("span[@class='year']");
@@ -102,17 +102,17 @@ namespace Titlalica_3.crawlers {
                     int discs = 1;
                     if (cdNode != null)
                     {
-                        String cdStr = cdNode.InnerText.Trim().Split(' ')[0];
+                        string cdStr = cdNode.InnerText.Trim().Split(' ')[0];
                         discs = Convert.ToInt32(cdStr.Trim());
                     }
                     
                     //versions are displayed in <span class="release">, separated by /
                     HtmlNode releaseNode = divC1.SelectSingleNode("span[@class='release']");
-                    String releases = "N/A";
+                    string releases = "N/A";
                     if (releaseNode != null) {
                         releases = releaseNode.InnerText.Replace('/', '\n');
                     }
-                    String fps = "N/A";
+                    string fps = "N/A";
                     //<div class='meta c2'> contains fps
                     HtmlNode fpsSpan = li.SelectSingleNode("div[@class='meta c2']/span[@class='fps']");
                     if (fpsSpan != null) {

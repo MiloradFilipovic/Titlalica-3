@@ -1,0 +1,14 @@
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\Titlalica 3.exe.config
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\App.config
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\Titlalica 3.exe
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\Titlalica 3.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\HtmlAgilityPack.dll
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\HtmlAgilityPack.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\HtmlAgilityPack.xml
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica_3.MainForm.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica_3.SettingsForm.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica_3.Properties.Resources.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica_3.TitlalicaTabPage.resources
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.csproj.GenerateResource.Cache
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.exe
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.pdb
