@@ -12,3 +12,9 @@ D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica_3
 D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.csproj.GenerateResource.Cache
 D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.exe
 D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.pdb
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\Titlalica 3.exe.manifest
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\bin\Release\Titlalica 3.application
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.csprojResolveAssemblyReference.cache
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.TrustInfo.xml
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.exe.manifest
+D:\workspace\dot_Net\Titlalica-3\Titlalica 3\Titlalica 3\obj\Release\Titlalica 3.application

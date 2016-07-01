@@ -12,6 +12,7 @@ using Titlalica_3.crawlers;
 using Titlalica_3.util;
 using System.Threading;
 using System.IO;
+using System.Text.RegularExpressions;
 
 /**
     TITLALICA 3 MAIN WINDOW
@@ -158,16 +159,7 @@ namespace Titlalica_3 {
                             DataGridViewCell cell = row.Cells[0];
                             int subtitleIndex = Convert.ToInt32(cell.Value);
                             Subtitle subtitle = ttp.Subs[subtitleIndex - 1];
-                            string fileVersion = subtitle.Version.Replace("...", "_").Replace(' ', '_');
-                            string fileName = subtitle.Title.Replace(' ', '_') + "_" + subtitleIndex.ToString() + ".zip";
-                            if (!subtitle.Version.Equals("N/A")) {
-                                string[] versionSplit = subtitle.Version.Split(' ');
-                                if (versionSplit.Length > 0)
-                                {
-                                    fileVersion = versionSplit[0];
-                                }
-                                fileName = subtitle.Title.Replace(' ', '_') + "_" + fileVersion  + subtitleIndex.ToString() + ".zip";
-                            }
+                            string fileName = getValidFileName(subtitle.Title) + "_" + subtitleIndex.ToString() + ".zip";
                             if (language.Equals("English")) {
                                 downloader.downloadPodnapisiFile(subtitle.DownloadURL, path, fileName.Replace("\n", ""));
                             }else {
@@ -350,6 +342,12 @@ namespace Titlalica_3 {
             } else {
                 this.Cursor = Cursors.Default;
             }
+        }
+
+        public string getValidFileName(string originalName) {
+            string regexSearch = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            Regex r = new Regex(string.Format("[{0}]", Regex.Escape(regexSearch)));
+            return r.Replace(originalName, "");
         }
 
         //----------------------------------------------------------------LISTENER METHODS
